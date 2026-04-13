@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skincare Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo-container">
+    <a href="#home">
+        <img src="logo.webp" alt="GLOW Beauty Logo" class="main-logo">
+    </a>
+</div> 
+            <ul class="nav-links">
+                <li><a href="#home">მთავარი</a></li>
+                <li><a href="#products">პროდუქცია</a></li>
+                <li><a href="#contact">კონტაქტი</a></li>
+            </ul>
+            <div class="header-icons">
+                <div class="cart-wrapper">
+                    <span>🛒</span>
+                    <span id="cart-count">0</span>
+                </div>
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="home">
+            
+            <div class="home-content">
+                <img src="mainPhoto.webp" class="main-image">
+                <h1>ხარისხიანი პროდუქცია შენი კანი</h1>
+                <p>აღმოაჩინე პრემიუმ ხარისხის კოსმეტიკა</p>
+                <a href="#products" class="btn">დაათვალიერე</a>
+            </div>
+           
+        </section>
+
+        <section class="features container">
+            <div class="feature-item">✨ ნატურალური ინგრედიენტები</div>
+            <div class="feature-item">🌿 ვეგანური ფორმულა</div>
+            <div class="feature-item">🚚 სწრაფი მიწოდება</div>
+        </section>
+       
+        <section id="products" class="container">
+            <div class="search-wrapper">
+            <h2 class="section-title">პოპულარული პროდუქტები</h2>
+
+            
+             <input type="text" id="product-search" placeholder="მოძებნე პროდუქტი...">
+            </div>
+            <div id="product-list" class="product-grid">
+                <p class="loading">პროდუქტები იტვირთება...</p>
+            </div>
+             
+        </section>
+
+        <section id="contact" class="container">
+            <div class="form-wrapper">
+                <h2>შემოგვიერთდი</h2>
+                <form id="registration-form">
+                    <div class="input-group">
+                        <input type="text" id="username" placeholder="სახელი და გვარი" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="ელ-ფოსტა" required>
+                    </div>
+                    <div class="input-group password-field">
+                        <input type="password" id="password" placeholder="პაროლი" required>
+                        <span id="toggle-password">👁️</span>
+                    </div>
+                    <button type="submit" class="btn full-width">რეგისტრაცია</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GLOW Beauty. ყველა უფლება დაცულია.</p>
+    </footer>
+
+    <div id="cookie-box" class="cookie-notification">
+        <p>ჩვენ ვიყენებთ ქუქი-ფაილებს საიტის გასაუმჯობესებლად.</p>
+        <button id="accept-cookies">ვეთანხმები</button>
+    </div>
+
+    <button id="scrollToTop">↑</button>
+
+    
+</body>
+</html>
