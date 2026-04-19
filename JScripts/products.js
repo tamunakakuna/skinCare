@@ -2,7 +2,7 @@
 export let allProducts = [];
 export let totalItems = 0;
 
-// API ფუნქცია
+// API 
 export async function fetchProducts(container) {
     try {
         const response = await fetch('https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline');
@@ -25,6 +25,7 @@ export function renderProducts(products, container) {
         container.innerHTML = '<p>პროდუქტი ვერ მოიძებნა.</p>';
         return;
     }
+    /*რათა მოგვიანებით ვიცოდე, რომელ პროდუქტს დავაჭირეთ. */
     products.forEach(product => {
         const card = document.createElement('div');
         card.className = 'product-card';
@@ -44,24 +45,24 @@ export function renderProducts(products, container) {
 document.addEventListener('DOMContentLoaded', async () => {
     const productList = document.getElementById('product-list');
     const searchInput = document.getElementById('product-search');
-    const cartCount = document.getElementById('cart-count'); // კალათის ციფრი
+    const cartCount = document.getElementById('cart-count'); 
 
     
     const products = await fetchProducts(productList);
     renderProducts(products, productList);
 
-    // კალათაში დამატების ლოგიკა (Event Delegation)
+    
     productList.addEventListener('click', (e) => {
         // ვამოწმებ, დავაჭირეთ თუ არა add-btn კლასის მქონე ღილაკს
         if (e.target.classList.contains('add-btn')) {
             const productId = e.target.dataset.id;
             const qtySpan = document.getElementById(`qty-${productId}`);
             
-            // რაოდენობის გაზრდა ვიზუალურად
+            // რაოდენობის გაზრდა
             let currentQty = parseInt(qtySpan.textContent);
             qtySpan.textContent = currentQty + 1;
 
-            // კალათის საერთო რაოდენობის განახლება
+            // კალათის რაოდ. განახლება
             let total = parseInt(cartCount.textContent);
             cartCount.textContent = total + 1;
         }

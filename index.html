@@ -6,14 +6,14 @@
     <title>Skincare Shop</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <script type="module" src="script.js"></script>
+    <script type="module" src="./JScripts/script.js"></script>
 </head>
 <body>
     <header id="main-header">
         <nav class="container">
             <div class="logo-container">
     <a href="#home">
-        <img src="logo.webp" alt="GLOW Beauty Logo" class="main-logo">
+        <img src="./IMG/logo.webp" alt="GLOW Beauty Logo" class="main-logo">
     </a>
 </div> 
             <ul class="nav-links">
@@ -38,10 +38,12 @@
         <section id="home" class="home">
             
             <div class="home-content">
-                <img src="mainPhoto.webp" class="main-image">
-                <h1>ხარისხიანი პროდუქცია შენი კანი</h1>
+                <img src="./IMG/mainPhoto.webp" class="main-image">
+                <h1>ხარისხიანი პროდუქცია შენი კანისთვის</h1>
                 <p>აღმოაჩინე პრემიუმ ხარისხის კოსმეტიკა</p>
                 <a href="#products" class="btn">დაათვალიერე</a>
+
+           
             </div>
            
         </section>
@@ -49,7 +51,14 @@
         <section class="features container">
             <div class="feature-item">✨ ნატურალური ინგრედიენტები</div>
             <div class="feature-item">🌿 ვეგანური ფორმულა</div>
-            <div class="feature-item">🚚 სწრაფი მიწოდება</div>
+            <div class="feature-item">🚚 სწრაფი მიწოდება</div> <br>
+
+                  <div class="media-container">
+    <video width="400" height="400" src="./videos/video_skin.mp4"  controls >
+    </video>
+    <video width="400" height="400" src="./videos/video2.mp4" controls >
+    </video>
+    </div> 
         </section>
        
         <section id="products" class="container">
@@ -71,12 +80,15 @@
                 <form id="registration-form">
                     <div class="input-group">
                         <input type="text" id="username" placeholder="სახელი და გვარი" required>
+                        <div class="error-msg"></div>
                     </div>
                     <div class="input-group">
                         <input type="email" id="email" placeholder="ელ-ფოსტა" required>
+                        <div class="error-msg"></div>
                     </div>
                     <div class="input-group password-field">
                         <input type="password" id="password" placeholder="პაროლი" required>
+                        <div class="error-msg"></div>
                         <span id="toggle-password">👁️</span>
                     </div>
                     <button type="submit" class="btn full-width">რეგისტრაცია</button>
@@ -94,7 +106,7 @@
         <button id="accept-cookies">ვეთანხმები</button>
     </div>
 
-    <button id="scrollToTop">↑</button>
+    <a href="#home" id="scrollToTop">↑</a>
 
     
 </body>

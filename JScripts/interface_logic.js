@@ -1,11 +1,20 @@
 // ფორმის ვალიდაცია
 export function initFormValidation() {
+     let isValid = true;
     const contactForm = document.getElementById('registration-form') || document.getElementById('contact-form');
     if (!contactForm) return;
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const inputs = contactForm.querySelectorAll('input[required]');
         let allFilled = [...inputs].every(input => input.value.trim() !== '');
+         if (inputs.id === 'email' && !inputs.value.includes('@')) {
+            errorDiv.textContent = "Email must contain @";
+            isValid = false;
+        }
+        else if (inputs.id === 'password' && inputs.value.length <6){
+            errorDiv.textContent = "Password must be at least 6 characters long";
+            isValid = false;
+        }
         if (allFilled) {
             alert('ფორმა წარმატებით გაიგზავნა!');
             contactForm.reset();
